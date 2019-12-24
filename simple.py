@@ -1,2 +1,1 @@
-print("Sreepathi")
-print("Sathish")
+print "Sreepathi"
