@@ -1,1 +1,1 @@
-print ("Sreepathi")
+print("Sreepathi")
