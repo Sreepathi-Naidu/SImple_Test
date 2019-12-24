@@ -3,5 +3,3 @@ str1 = "Sathish"
 print(Str)
 print(str1)
 print("Good")
-print("sathish")
-print("SreeSathish")
