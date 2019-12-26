@@ -1,1 +1,2 @@
-print("Sreepathi")
+a="Sreepathi"
+print(a)
