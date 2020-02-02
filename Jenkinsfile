@@ -1,10 +1,34 @@
 pipeline {
-    agent { docker { image 'python:3.5.1' } }
+    agent {
+        label "windows"
+    }
+    tools {
+        maven 'Maven3.1.1'
+        jdk 'java8'
+    }
     stages {
-        stage('build') {
+        stage ('Initialize') {
             steps {
-                sh 'python --version'
+                bat '''
+                    echo "PATH = %PATH%"
+                    echo "M2_HOME = %M2_HOME%"
+                '''
             }
         }
-    }
+
+        stage ('Build') {
+            steps {
+                    bat 'cd NumberGenerator & mvn install'
+            }
+             post {
+                success {
+                    junit 'NumberGenerator/target/surefire-reports/*.xml'
+                        }
+                 }
+               
+
+           
+            }
+        }
+    
 }
