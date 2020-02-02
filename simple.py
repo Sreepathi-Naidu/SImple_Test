@@ -1,2 +1,0 @@
-a="Sreepathi"
-print(a)
