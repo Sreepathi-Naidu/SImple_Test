@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent slave1
 
     stages {
         stage('Build') {
@@ -17,5 +17,9 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+    }
+    
+    steps {
+        mkdir "Sreepathi"
     }
 }
